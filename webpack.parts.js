@@ -1,15 +1,15 @@
-/**@brief DebServer Setting */
+/** @brief DebServer Setting */
 exports.devServer = ({ host, port } = {}) => ({
   devServer: {
     historyApiFallback: true,
-    stats: "errors-only",
+    stats: 'errors-only',
     host, // Defaults to `localhost`
     port, // Defaults to 8080
-    overlay: { errors: true, warnings: true }
-  }
+    overlay: { errors: true, warnings: true },
+  },
 });
 
-/**@brief Css Loader */
+/** @brief Css Loader */
 exports.loadCSS = ({ include, exclude } = {}) => ({
   module: {
     rules: [
@@ -17,13 +17,13 @@ exports.loadCSS = ({ include, exclude } = {}) => ({
         test: /\.css$/,
         include,
         exclude,
-        use: ["style-loader", "css-loader"]
-      }
-    ]
-  }
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
+  },
 });
 
-/**@brief Babel Loader */
+/** @brief Babel Loader */
 exports.ladBabel = ({ include, exclude } = {}) => ({
   module: {
     rules: [
@@ -31,13 +31,13 @@ exports.ladBabel = ({ include, exclude } = {}) => ({
         test: /\.(js|jsx)$/,
         include,
         exclude,
-        use: ["babel-loader"]
-      }
-    ]
-  }
+        use: ['babel-loader'],
+      },
+    ],
+  },
 });
 
-/**@brief SourceMap Setting */
+/** @brief SourceMap Setting */
 exports.generateSourceMaps = ({ type }) => ({
-  devtool: type
+  devtool: type,
 });
